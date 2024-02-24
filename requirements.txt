@@ -1,0 +1,8 @@
+streamlit
+numpy
+pandas
+matplotlib
+pydeck
+DrissionPage==4.0.0b17
+sqlalchemy
+mysql-connector-python
