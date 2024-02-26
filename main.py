@@ -143,51 +143,11 @@ if not data.empty:
         tooltip={
             'html': f'{{restaurant_name}}<br>{{company_name}}<br>Number of restaurants: {{unique_restaurant_count}}<br><b>Per-Restaurant {metric.capitalize()}:</b> {{{metric}}}',
             'style': {
-                # 'backgroundColor': 'steelblue',
+                'backgroundColor': 'steelblue',
                 'color': 'white'
             }
         }
     ))
-    # st.dataframe(data)
-
-    # data['color'] = data[metric].apply(lambda x: [52, 152, 219, 60] if x > 0 else [230, 126, 34, 60])
-    # if metric =='revenue':
-    #     data[f'per_restaurant_{metric}'] = data[f'per_restaurant_{metric}']*0.01
-    # else:
-    #     data[f'per_restaurant_{metric}'] = data[f'per_restaurant_{metric}'].abs()*0.2
-
-
-    # st.map(data,
-    #     latitude='latitude',
-    #     longitude='longitude',
-    #     size=f'per_restaurant_{metric}',
-    #     color='color',
-    #     use_container_width=True
-    #     )
-    
-    # st.title('EDA of Restaurant Financial Data')
-
-    # st.header('Basic Statistics')
-    # st.write(data.describe())
-
-    # st.header('Distribution of Revenue and Profit')
-    # fig, ax = plt.subplots()
-    # sns.histplot(data[f'per_restaurant_{metric}'], kde=True, color="blue", label="Revenue", ax=ax)
-    # sns.histplot(data['profit'], kde=True, color="green", label="Profit", ax=ax)
-    # plt.legend()
-    # st.pyplot(fig)
-
-
-    # # Grouping data by restaurant type and calculating average revenue and profit
-    # avg_financials_by_type = data.groupby('type')[f'per_restaurant_{metric}'].mean().reset_index()
-
-    # # Visualization
-    # fig1= plt.figure(figsize=(10, 6))
-    # sns.barplot(x='type', y=f'per_restaurant_{metric}', data=avg_financials_by_type, palette='coolwarm')
-    # plt.title(f'Average {metric} by Restaurant Type')
-    # plt.xticks(rotation=45)
-    # plt.tight_layout()
-    # st.pyplot(fig1)
 
 else:
     st.write("No data available for the selected filters.")
